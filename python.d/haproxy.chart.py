@@ -12,7 +12,7 @@ retries = 60
 
 # charts order (can be overridden if you want less charts, or different order)
 ORDER = ['qcur', 'scur', 'bin', 'bout']
-POSITION = [2, 4, 8, 9]
+POSITION = ['2', '4', '8', '9']
 
 CHARTS = {
     'qcur': {
@@ -96,7 +96,7 @@ class Service(SocketService, UrlService):
                 continue
             for i in range(len(ORDER)):
                 try:
-                    data[prefix + ORDER[i]] = int(node[POSITION[i]])
+                    data[prefix + ORDER[i]] = int(node[int(POSITION[i])])
                 except ValueError:
                     pass
 
